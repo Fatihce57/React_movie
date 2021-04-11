@@ -1,5 +1,6 @@
 import React from "react";
 import MovieList from "./MovieList";
+import SearchBar from "./SearchBar";
 
 class App extends React.Component {
   state = {
@@ -38,26 +39,34 @@ class App extends React.Component {
 
 
 
-deleteMovie = (movie) => {
+  deleteMovie = (movie) => {
     const newMovieList = this.state.movies.filter(
-        m => m.id !== movie.id
+      m => m.id !== movie.id
     );
 
-    this.setState ({
-        movies: newMovieList
-    })
-}
+    /* this.setState ({
+         movies: newMovieList
+     })*/
+    /* yeni listenin gelmesi icin bu fonsiyonda calisabilir ama liste bos olmasi durumunda daha mantikli olurdu. Bundan dolayi asagisali fonksiyon daha mantikli*/
+
+    this.setState(state => ({
+      movies: newMovieList
+    }))
+  }
 
 
   render() {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-lg-12"></div>
+          <div className="col-lg-12">
+            <SearchBar />
+          </div>
+
         </div>
         <MovieList
-        movies={this.state.movies}
-        deleteMovieProp={this.deleteMovie} />
+          movies={this.state.movies}
+          deleteMovieProp={this.deleteMovie} />
       </div>
     );
   }
