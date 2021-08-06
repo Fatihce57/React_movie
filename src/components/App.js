@@ -58,8 +58,6 @@ class App extends React.Component {
         "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.",
         "imageURL": "https://image.tmdb.org/t/p/w220_and_h330_face/6Bbq8qQWpoApLZYWFFAuZ1r2gFw.jpg"
       }
-
-
     ],
 
 
