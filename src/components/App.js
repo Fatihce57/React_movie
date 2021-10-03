@@ -65,7 +65,6 @@ class App extends React.Component {
   }
 
 
-
   deleteMovie = (movie) => {
     const newMovieList = this.state.movies.filter(
       m => m.id !== movie.id
@@ -85,7 +84,6 @@ class App extends React.Component {
     // console.log(event.target.value)
     this.setState({ searchQuery: event.target.value })
   }
-
 
   render() {
 

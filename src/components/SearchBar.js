@@ -2,33 +2,33 @@ import React from 'react';
 
 class SearchBar extends React.Component {
 
-state = {
-  
-}
+    state = {
 
-handleFormSubmit = (event) => {
-    event.preventDefault();
-}
+    }
+
+    handleFormSubmit = (event) => {
+        event.preventDefault();
+    }
 
     render() {
 
-return (
+        return (
 
-<form onSubmit={this.handleFormSubmit}>
-    <div className="form-row mb-5">
-        <div className="col-12">
-            <input 
-            onChange={this.props.searchMovieProp} 
-            type="text" className="form-control" 
-            placeholder="Search a movie"
-             />
-        </div>
-    </div>
-</form>
+            <form onSubmit={this.handleFormSubmit}>
+                <div className="form-row mb-5">
+                    <div className="col-12">
+                        <input
+                            onChange={this.props.searchMovieProp}
+                            type="text" className="form-control"
+                            placeholder="Search a movie"
+                        />
+                    </div>
+                </div>
+            </form>
 
 
 
-)
+        )
 
     }
 }
