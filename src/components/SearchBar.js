@@ -1,11 +1,6 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-
-    state = {
-
-    }
-
     handleFormSubmit = (event) => {
         event.preventDefault();
     }
@@ -26,10 +21,7 @@ class SearchBar extends React.Component {
                 </div>
             </form>
 
-
-
         )
-
     }
 }
 

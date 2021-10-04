@@ -11,7 +11,7 @@ class App extends React.Component {
   }
 
   // async componentDidMount(){
-  //   const baseUrl = "http://localhost:3002/movies";
+  //   const baseURL = "http://localhost:3002/movies";
   //   const response= await fetch(baseUrl)
   // console.log(response)   
   //   const data=await response.json()
@@ -21,26 +21,48 @@ class App extends React.Component {
 
 
   async componentDidMount() {
-    const response=await axios.get("http://localhost:3002/movies");
-    console.log(response)
-    this.setState({movies:response.data})
+    const response = await axios.get("http://localhost:3002/movies");
+    // console.log(response)
+    this.setState({ movies: response.data })
   }
 
 
-  deleteMovie = (movie) => {
+  // deleteMovie = (movie) => {
+  //   const newMovieList = this.state.movies.filter(
+  //     m => m.id !== movie.id
+  //   );
+  //   this.setState(state => ({
+  //     movies: newMovieList
+  //   }))
+  // }
+
+  // FETCH API
+  // deleteMovie = async (movie) => {
+  //   const baseURL = `http://localhost:3002/movies/${movie.id}`;
+  //   await fetch(baseURL, { method: 'DELETE' })
+
+  //   const newMovieList = this.state.movies.filter(
+  //     m => m.id !== movie.id
+  //   );
+  //   this.setState(state => ({
+  //     movies: newMovieList
+  //   }))
+  // }
+
+  // FETCH API
+  deleteMovie = async (movie) => {
+ axios.delete(`http://localhost:3002/movies/${movie.id}`)
+ 
+    
     const newMovieList = this.state.movies.filter(
       m => m.id !== movie.id
     );
-
-    /* this.setState ({
-         movies: newMovieList
-     })*/
-    /* yeni listenin gelmesi icin bu fonsiyonda calisabilir ama liste bos olmasi durumunda daha mantikli olurdu. Bundan dolayi asagisali fonksiyon daha mantikli*/
-
     this.setState(state => ({
       movies: newMovieList
     }))
   }
+
+
 
   searchMovie = (event) => {
     // console.log(event.target.value)
