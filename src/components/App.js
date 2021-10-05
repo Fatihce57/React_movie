@@ -51,9 +51,9 @@ class App extends React.Component {
 
   // FETCH API
   deleteMovie = async (movie) => {
- axios.delete(`http://localhost:3002/movies/${movie.id}`)
- 
-    
+    axios.delete(`http://localhost:3002/movies/${movie.id}`)
+
+
     const newMovieList = this.state.movies.filter(
       m => m.id !== movie.id
     );
@@ -61,7 +61,6 @@ class App extends React.Component {
       movies: newMovieList
     }))
   }
-
 
 
   searchMovie = (event) => {

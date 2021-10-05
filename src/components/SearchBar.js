@@ -8,7 +8,6 @@ class SearchBar extends React.Component {
     render() {
 
         return (
-
             <form onSubmit={this.handleFormSubmit}>
                 <div className="form-row mb-5">
                     <div className="col-12">
@@ -20,13 +19,8 @@ class SearchBar extends React.Component {
                     </div>
                 </div>
             </form>
-
         )
     }
 }
-
-
-
-
 
 export default SearchBar;
